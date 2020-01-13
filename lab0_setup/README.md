@@ -9,11 +9,13 @@
 ## Modify this section
 
 - How many hours did it take you to complete this lab?
+	- about 6 (windows was giving me a lot of problems)
 - Did you collaborate with any other students/TAs/Professors?
-- Did you use any external resources? (Cite them below)
-  - tbd
-  - tbd
+	- no
+- Did you use any external resources? (Cite them below)	
+	- no
 - (Optional) What was your favorite part of the lab?
+	- seeing that red screen finally work
 - (Optional) How would you improve the lab?
 
 ## Logistics
