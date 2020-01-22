@@ -5,6 +5,7 @@
 
 #include <QtGui/QColor>
 #include <QtGui/QImage>
+#include <math.h>
 
 struct Star
 {
