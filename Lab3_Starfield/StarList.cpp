@@ -34,20 +34,19 @@ void StarList::updateAndRender(QImage& image, float delta, const QSize& windowSi
     float halfHeight = 600 / 2.0f;
 
     // Note the conversion to radians
-    // TODO: Modify me
-    float tanHalfFOV = 1;
+	float tanHalfFOV = tan((70 / 2 * 3.14) * 180);
+
 
     // Iterate through all of your stars 
     for (int i = 0; i < stars_.size(); i++) {
         stars_[i].z -= delta * speed_;
-
         if (stars_[i].z <= 0) {
             initStar(i);
             continue;
         }
 
         // TODO: Modify me!!
-        float givePerspective = 1;
+        float givePerspective = tanHalfFOV * stars_[i].z;
 
         // Apply our perspective
         int x = (int)((stars_[i].x / (givePerspective)) * halfWidth + halfWidth);
