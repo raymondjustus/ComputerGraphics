@@ -11,7 +11,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 // Sample unit test comparing against GLM.
-bool unitTest0(){
+bool matrixUnitTest0(){
 	glm::mat4 glmIdentityMatrix = glm::mat4(1.0f);
 	Matrix4f myIdentity( 1.0f,0,0,0,
         			     0,1.0f,0,0,
@@ -41,7 +41,7 @@ bool unitTest0(){
     return false;	
 }
 
-bool unitTest1(){
+bool matrixUnitTest1(){
 	glm::mat4 glmIdentityMatrix = glm::mat4(1.0f);
 	Matrix4f myIdentity( 1.0f,0,0,0,
         			     0,1.0f,0,0,
@@ -72,7 +72,7 @@ bool unitTest1(){
 }
 
 // Sample unit test comparing against GLM.
-bool unitTest2(){
+bool matrixUnitTest2(){
 	glm::mat4 glmIdentityMatrix = glm::mat4(1.0f);
 	Vector4f a(1.0f ,0.0f,  0.0f,   0.0f);
 	Vector4f b(0.0f ,1.0f,  0.0f,   0.0f);
@@ -104,8 +104,7 @@ bool unitTest2(){
 }
 
 // Sample unit test comparing against GLM.
-// TODO: Test against glm::scale
-bool unitTest3(){
+bool matrixUnitTest3(){
 	glm::mat4 glmScale = glm::mat4(2.0f);
 	glmScale[3][3] = 1; //changed to 1 because w should always be 1, and Piazza post suggested this
 	Vector4f a(1.0f,0,0,0);
@@ -140,7 +139,7 @@ bool unitTest3(){
 
 // Sample unit test comparing against GLM.
 // Testing operator
-bool unitTest4(){
+bool matrixUnitTest4(){
 	glm::mat4 glmTest = glm::mat4(1.0f);
     glmTest[1][3] = 72.0f;
     glmTest[2][3] = 2.1f;
@@ -222,8 +221,8 @@ bool unitTest9() {
 }
 
 
-// test Magnitude
-bool unitTest10() {
+// test * matrix operator (multiply two matrices)
+bool matrixUnitTest10() {
 	Vector4f a(2.0f, 0, 0, 0);
 	Vector4f b(0.0f, 3.0f, 0, 0);
 	Vector4f c(0, 0, 4.0f, 0);
@@ -237,6 +236,11 @@ bool unitTest10() {
 	Matrix4f matB= Matrix4f(e, f, g, h);
 
 	Matrix4f result = matA * matB;
+
+	glm::mat4 test = glm::scale(1.0f, 2.0f, 3.0f);
+	//std::cout << "HERE I AM " << test << " \n";
+
+
 
 	Vector4f i(2.0f, 0, 0, 0);
 	Vector4f j(0.0f, 6.0f, 0, 0);
@@ -266,25 +270,194 @@ bool unitTest10() {
 	return false;
 }
 
+// test * matrix operator (multiply matrix by vector4f)
+bool matrixUnitTest11() {
+	Vector4f a(2.0f, 0, 0, 0);
+	Vector4f b(0, 3.0f, 0, 0);
+	Vector4f c(0, 0, 4.0f, 0);
+	Vector4f d(0, 0, 0, 1.0f);
+	Matrix4f matA = Matrix4f(a, b, c, d);
 
+	Vector4f vecA(3.0f, 4.0f, 5.0f, 1.0f);
 
+	Vector4f result = matA * vecA;
+
+	Vector4f vecB(6.0f, 12.0f, 20.0f, 1.0f);
+
+	if (result[0] == vecB[0] &&
+		result[1] == vecB[1] &&
+		result[2] == vecB[2] &&
+		result[3] == vecB[3]) {
+		return true;
+	}
+	return false;
+}
+
+// Testing rotating matrix on x axis
+bool matrixUnitTest12() {
+	Matrix4f myMatrix(10, 10, 10, 10,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0);
+
+	Matrix4f result = myMatrix.MakeRotationX(0.0f);
+
+	Vector4f a(1.0f, 0, 0, 0);
+	Vector4f b(0, 1.0f, -0, 0);
+	Vector4f c(0, 0, 1.0f, 0);
+	Vector4f d(0, 0, 0, 1.0f);
+	Matrix4f matA = Matrix4f(a, b, c, d);
+
+	if (result[0][0] == matA[0][0] &&
+		result[0][1] == matA[0][1] &&
+		result[0][2] == matA[0][2] &&
+		result[0][3] == matA[0][3] &&
+		result[1][0] == matA[1][0] &&
+		result[1][1] == matA[1][1] &&
+		result[1][2] == matA[1][2] &&
+		result[1][3] == matA[1][3] &&
+		result[2][0] == matA[2][0] &&
+		result[2][1] == matA[2][1] &&
+		result[2][2] == matA[2][2] &&
+		result[2][3] == matA[2][3] &&
+		result[3][0] == matA[3][0] &&
+		result[3][1] == matA[3][1] &&
+		result[3][2] == matA[3][2] &&
+		result[3][3] == matA[3][3]) {
+		return true;
+	}
+	return false;
+}
+
+// Testing rotating matrix on y axis
+bool matrixUnitTest13() {
+	Matrix4f myMatrix(10, 10, 10, 10,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0);
+
+	Matrix4f result = myMatrix.MakeRotationY(0.0f);
+
+	Vector4f a(1.0f, 0, 0, 0);
+	Vector4f b(0, 1.0f, 0, 0);
+	Vector4f c(-0, 0, 1.0f, 0);
+	Vector4f d(0, 0, 0, 1.0f);
+	Matrix4f matA = Matrix4f(a, b, c, d);
+
+	if (result[0][0] == matA[0][0] &&
+		result[0][1] == matA[0][1] &&
+		result[0][2] == matA[0][2] &&
+		result[0][3] == matA[0][3] &&
+		result[1][0] == matA[1][0] &&
+		result[1][1] == matA[1][1] &&
+		result[1][2] == matA[1][2] &&
+		result[1][3] == matA[1][3] &&
+		result[2][0] == matA[2][0] &&
+		result[2][1] == matA[2][1] &&
+		result[2][2] == matA[2][2] &&
+		result[2][3] == matA[2][3] &&
+		result[3][0] == matA[3][0] &&
+		result[3][1] == matA[3][1] &&
+		result[3][2] == matA[3][2] &&
+		result[3][3] == matA[3][3]) {
+		return true;
+	}
+	return false;
+}
+
+// Testing rotating matrix on z axis
+bool matrixUnitTest14() {
+	Matrix4f myMatrix(10, 10, 10, 10,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0);
+
+	Matrix4f result = myMatrix.MakeRotationZ(0.0f);
+
+	Vector4f a(1.0f, -0, 0, 0);
+	Vector4f b(0, 1.0f, 0, 0);
+	Vector4f c(0, 0, 0, 0);
+	Vector4f d(0, 0, 0, 1.0f);
+	Matrix4f matA = Matrix4f(a, b, c, d);
+
+	if (result[0][0] == matA[0][0] &&
+		result[0][1] == matA[0][1] &&
+		result[0][2] == matA[0][2] &&
+		result[0][3] == matA[0][3] &&
+		result[1][0] == matA[1][0] &&
+		result[1][1] == matA[1][1] &&
+		result[1][2] == matA[1][2] &&
+		result[1][3] == matA[1][3] &&
+		result[2][0] == matA[2][0] &&
+		result[2][1] == matA[2][1] &&
+		result[2][2] == matA[2][2] &&
+		result[2][3] == matA[2][3] &&
+		result[3][0] == matA[3][0] &&
+		result[3][1] == matA[3][1] &&
+		result[3][2] == matA[3][2] &&
+		result[3][3] == matA[3][3]) {
+		return true;
+	}
+	return false;
+}
+
+// Testing making scale matrix
+bool matrixUnitTest15() {
+	Matrix4f myMatrix(10, 10, 10, 10,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0);
+
+	Matrix4f result = myMatrix.MakeScale(10.0f, 20.0f, 30.0f);
+
+	Vector4f a(10.0f, 0, 0, 0);
+	Vector4f b(0, 20.0f, 0, 0);
+	Vector4f c(0, 0, 30.0f, 0);
+	Vector4f d(0, 0, 0, 1.0f);
+	Matrix4f matA = Matrix4f(a, b, c, d);
+
+	if (result[0][0] == matA[0][0] &&
+		result[0][1] == matA[0][1] &&
+		result[0][2] == matA[0][2] &&
+		result[0][3] == matA[0][3] &&
+		result[1][0] == matA[1][0] &&
+		result[1][1] == matA[1][1] &&
+		result[1][2] == matA[1][2] &&
+		result[1][3] == matA[1][3] &&
+		result[2][0] == matA[2][0] &&
+		result[2][1] == matA[2][1] &&
+		result[2][2] == matA[2][2] &&
+		result[2][3] == matA[2][3] &&
+		result[3][0] == matA[3][0] &&
+		result[3][1] == matA[3][1] &&
+		result[3][2] == matA[3][2] &&
+		result[3][3] == matA[3][3]) {
+		return true;
+	}
+	return false;
+}
 
 int main(){
     // Keep track of the tests passed
     unsigned int testsPassed = 0;
 
     // Run 'unit tests'
-    std::cout << "Passed 0: " << unitTest0() << " \n";
-    std::cout << "Passed 1: " << unitTest1() << " \n";
-    std::cout << "Passed 2: " << unitTest2() << " \n";
-    std::cout << "Passed 3: " << unitTest3() << " \n";
-    std::cout << "Passed 4: " << unitTest4() << " \n";
+    std::cout << "Passed 0: " << matrixUnitTest0() << " \n";
+    std::cout << "Passed 1: " << matrixUnitTest1() << " \n";
+    std::cout << "Passed 2: " << matrixUnitTest2() << " \n";
+    std::cout << "Passed 3: " << matrixUnitTest3() << " \n";
+    std::cout << "Passed 4: " << matrixUnitTest4() << " \n";
     std::cout << "Passed 5: " << unitTest5() << " \n";
 	std::cout << "Passed 6: " << unitTest6() << " \n";
 	std::cout << "Passed 7: " << unitTest7() << " \n";
 	std::cout << "Passed 8: " << unitTest8() << " \n";
 	std::cout << "Passed 9: " << unitTest9() << " \n";
-	std::cout << "Passed 10: " << unitTest10() << " \n";
+	std::cout << "Passed 10: " << matrixUnitTest10() << " \n";
+	std::cout << "Passed 11: " << matrixUnitTest11() << " \n";
+	std::cout << "Passed 12: " << matrixUnitTest12() << " \n";
+	std::cout << "Passed 13: " << matrixUnitTest13() << " \n";
+	std::cout << "Passed 14: " << matrixUnitTest14() << " \n";
+	std::cout << "Passed 15: " << matrixUnitTest15() << " \n";
 
     return 0;
 }
