@@ -17,6 +17,8 @@ include_directories(
 )
 
 set(srcs
+  ObjParse.cpp
+  Lab5Widget.cpp
   BasicWidget.cpp
   Application.cpp
   main.cpp
