@@ -1,0 +1,10 @@
+^C:\USERS\RAYMO\DESKTOP\COMPUTERGRAPHICS\ASSIGNMENT1_MATHFOUNDATIONS1\BUILD\CMAKEFILES\D57B5110D0BB7F1EA360540B1F018D82\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/raymo/Desktop/ComputerGraphics/Assignment1_MathFoundations1 -BC:/Users/raymo/Desktop/ComputerGraphics/Assignment1_MathFoundations1/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/raymo/Desktop/ComputerGraphics/Assignment1_MathFoundations1/build/Assignment1.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

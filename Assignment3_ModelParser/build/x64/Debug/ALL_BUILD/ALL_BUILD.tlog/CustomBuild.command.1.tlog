@@ -1,0 +1,10 @@
+^C:\USERS\RAYMO\DESKTOP\COMPUTERGRAPHICS\ASSIGNMENT3_MODELPARSER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser -BC:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/build --check-stamp-file C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

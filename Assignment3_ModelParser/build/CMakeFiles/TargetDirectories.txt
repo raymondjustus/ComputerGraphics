@@ -1,0 +1,3 @@
+C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/build/CMakeFiles/Assignment.dir
+C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,10 @@
+^C:\USERS\RAYMO\DESKTOP\COMPUTERGRAPHICS\ASSIGNMENT3_MODELPARSER\BUILD\CMAKEFILES\DBDBA78562155BD5E1B8128B803FA354\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser -BC:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/build/Assignment.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

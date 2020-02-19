@@ -1,0 +1,8 @@
+﻿  Automatic MOC for target Assignment
+  Building Custom Rule C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/CMakeLists.txt
+  mocs_compilation.cpp
+  BasicWidget.cpp
+  Application.cpp
+  main.cpp
+  Generating Code...
+  Assignment.vcxproj -> C:\Users\raymo\Desktop\ComputerGraphics\Assignment3_ModelParser\build\Debug\Assignment.exe

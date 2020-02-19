@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\raymo\Desktop\ComputerGraphics\Assignment1_MathFoundations1\src\main.cpp(241,24): error C2672: 'glm::scale': no matching overloaded function found
+C:\Users\raymo\Desktop\ComputerGraphics\Assignment1_MathFoundations1\src\main.cpp(241,46): error C2780: 'glm::mat<4,4,T,Q> glm::scale(const glm::vec<3,T,Q> &)': expects 1 arguments - 3 provided
+C:\Users\raymo\Desktop\ComputerGraphics\Assignment1_MathFoundations1\include\glm/gtx/transform.hpp(54): message : see declaration of 'glm::scale'
+C:\Users\raymo\Desktop\ComputerGraphics\Assignment1_MathFoundations1\src\main.cpp(241,46): error C2780: 'glm::mat<4,4,T,Q> glm::scale(const glm::mat<4,4,T,Q> &,const glm::vec<3,T,Q> &)': expects 2 arguments - 3 provided
+C:\Users\raymo\Desktop\ComputerGraphics\Assignment1_MathFoundations1\include\glm\gtc\../ext/matrix_transform.hpp(95): message : see declaration of 'glm::scale'
