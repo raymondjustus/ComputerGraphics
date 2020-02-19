@@ -10,6 +10,11 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+
+void printVector(Vector4f v) {
+	std::cout << v.x << " " << v.y << " " << v.z << " " << v.w << std::endl;
+}
+
 // Sample unit test comparing against GLM.
 bool matrixUnitTest0(){
 	glm::mat4 glmIdentityMatrix = glm::mat4(1.0f);
@@ -104,6 +109,7 @@ bool matrixUnitTest2(){
 }
 
 // Sample unit test comparing against GLM.
+// TODO: Test against glm::scale
 bool matrixUnitTest3(){
 	glm::mat4 glmScale = glm::mat4(2.0f);
 	glmScale[3][3] = 1; //changed to 1 because w should always be 1, and Piazza post suggested this
@@ -236,11 +242,6 @@ bool matrixUnitTest10() {
 	Matrix4f matB= Matrix4f(e, f, g, h);
 
 	Matrix4f result = matA * matB;
-
-	glm::mat4 test = glm::scale(1.0f, 2.0f, 3.0f);
-	//std::cout << "HERE I AM " << test << " \n";
-
-
 
 	Vector4f i(2.0f, 0, 0, 0);
 	Vector4f j(0.0f, 6.0f, 0, 0);
@@ -437,6 +438,51 @@ bool matrixUnitTest15() {
 	return false;
 }
 
+// test /= by 0
+bool vectorUnitTest16() {
+	Vector4f a(-1, 1, 2, -2);
+	float s = 0;
+	a /= s; // should return succesfully, with -inf for all negative values and inf for positive
+	return a.x == -INFINITY && a.y == INFINITY && a.z == INFINITY && a.w == -INFINITY;
+}
+
+// test Normalize
+bool vectorUnitTest17() {
+	Vector4f a(1, 1, 1, 1);
+	Vector4f res = Normalize(a);
+	return res.x == 0.5 && res.y == 0.5 && res.z == 0.5 && res.w == 0.5;
+}
+
+// test Normalize 0s -> all nans
+bool vectorUnitTest18() {
+	Vector4f a(0, 0, 0, 0);
+	Vector4f res = Normalize(a);
+	return isnan(res.x) && isnan(res.y) && isnan(res.z) && isnan(res.w);
+}
+
+// test Dot
+bool vectorUnitTest19() {
+	Vector4f a(1, 2, 3, 4); // sum of the products of both x's y's z's and w's
+	Vector4f b(2, 3, 4, 5);
+	float res = Dot(a, b);
+	return res == 40;
+}
+
+// test CrossProduct
+bool vectorUnitTest20() {
+	Vector4f a(1, 2, 3, 4);
+	Vector4f b(2, 3, 4, 5);
+	Vector4f res = CrossProduct(a, b);
+	return res.x == -1 && res.y == 2 && res.z == -1 && res.w == 0;
+}
+// test Project
+bool vectorUnitTest21() {
+	Vector4f a(.5, .5, .5, .5);
+	Vector4f b(4, 2, 4, 2);
+	Vector4f res = Project(a, b);
+	return res.x == 0.6f && res.y == 0.3f && res.z == 0.6f && res.w == 0.3f;
+}
+
 int main(){
     // Keep track of the tests passed
     unsigned int testsPassed = 0;
@@ -458,6 +504,12 @@ int main(){
 	std::cout << "Passed 13: " << matrixUnitTest13() << " \n";
 	std::cout << "Passed 14: " << matrixUnitTest14() << " \n";
 	std::cout << "Passed 15: " << matrixUnitTest15() << " \n";
+	std::cout << "Passed 16: " << vectorUnitTest16() << " \n";
+	std::cout << "Passed 17: " << vectorUnitTest17() << " \n";
+	std::cout << "Passed 18: " << vectorUnitTest18() << " \n";
+	std::cout << "Passed 19: " << vectorUnitTest19() << " \n";
+	std::cout << "Passed 20: " << vectorUnitTest20() << " \n";
+	std::cout << "Passed 21: " << vectorUnitTest21() << " \n";
 
     return 0;
 }
