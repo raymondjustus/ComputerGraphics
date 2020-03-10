@@ -1,0 +1,3 @@
+C:/Users/raymo/Desktop/ComputerGraphics/Lab7_AbstractionsAndTextures/build/CMakeFiles/App.dir
+C:/Users/raymo/Desktop/ComputerGraphics/Lab7_AbstractionsAndTextures/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/raymo/Desktop/ComputerGraphics/Lab7_AbstractionsAndTextures/build/CMakeFiles/ZERO_CHECK.dir

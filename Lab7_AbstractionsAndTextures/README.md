@@ -10,11 +10,10 @@
 
 ## Modify this section
 
-- How many hours did it take you to complete this lab?
-- Did you collaborate with any other students/TAs/Professors?
+- How many hours did it take you to complete this lab? 1
+- Did you collaborate with any other students/TAs/Professors? Andrew Alcala and Roger Chen
 - Did you use any external resources? (Cite them below)
-  - tbd
-  - tbd
+  - No
 - (Optional) What was your favorite part of the lab?
 - (Optional) How would you improve the lab?
 

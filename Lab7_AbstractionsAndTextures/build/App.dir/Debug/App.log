@@ -1,0 +1,8 @@
+﻿  Automatic MOC for target App
+  BasicWidget.cpp
+C:\Users\raymo\Desktop\ComputerGraphics\Lab7_AbstractionsAndTextures\BasicWidget.cpp(46,35): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\raymo\Desktop\ComputerGraphics\Lab7_AbstractionsAndTextures\BasicWidget.cpp(47,34): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\raymo\Desktop\ComputerGraphics\Lab7_AbstractionsAndTextures\BasicWidget.cpp(48,34): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\raymo\Desktop\ComputerGraphics\Lab7_AbstractionsAndTextures\BasicWidget.cpp(49,33): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\raymo\Desktop\ComputerGraphics\Lab7_AbstractionsAndTextures\BasicWidget.cpp(103,65): warning C4305: 'argument': truncation from 'double' to 'float'
+  App.vcxproj -> C:\Users\raymo\Desktop\ComputerGraphics\Lab7_AbstractionsAndTextures\build\Debug\App.exe

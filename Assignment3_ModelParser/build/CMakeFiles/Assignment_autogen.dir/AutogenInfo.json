@@ -16,6 +16,16 @@
 			"C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/BasicWidget.h",
 			"Mu",
 			"EWIEGA46WW/moc_BasicWidget.cpp"
+		],
+		[
+			"C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.h",
+			"Mu",
+			"EWIEGA46WW/moc_Lab5Widget.cpp"
+		],
+		[
+			"C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/ObjParse.h",
+			"Mu",
+			"EWIEGA46WW/moc_ObjParse.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -91,6 +101,14 @@
 		],
 		[
 			"C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/BasicWidget.cpp",
+			"Mu"
+		],
+		[
+			"C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.cpp",
+			"Mu"
+		],
+		[
+			"C:/Users/raymo/Desktop/ComputerGraphics/Assignment3_ModelParser/ObjParse.cpp",
 			"Mu"
 		],
 		[
