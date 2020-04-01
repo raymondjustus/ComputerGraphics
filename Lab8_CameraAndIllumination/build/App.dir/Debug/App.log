@@ -1,0 +1,5 @@
+﻿  Automatic MOC for target App
+  UnitQuad.cpp
+C:\Users\raymo\Desktop\ComputerGraphics\Lab8_CameraAndIllumination\UnitQuad.cpp(61,17): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\raymo\Desktop\ComputerGraphics\Lab8_CameraAndIllumination\UnitQuad.cpp(73,17): warning C4305: 'argument': truncation from 'double' to 'float'
+  App.vcxproj -> C:\Users\raymo\Desktop\ComputerGraphics\Lab8_CameraAndIllumination\build\Debug\App.exe
