@@ -7,8 +7,12 @@
 *TODO*: Please edit the following information in your assignment
 
 * Name and partners name(At most 1 partner for this Assignment): 
-* How many hours did it take you to complete this Assignment? 
+Ray Namar
+Andrew Alcala (Partner)
+* How many hours did it take you to complete this Assignment?
+12-15
 * Did you collaborate or share ideas with any other students/TAs/Professors? 
+No
 * Did you use any external resources? 
   * (tbd if any)
   * (tbd if any)
