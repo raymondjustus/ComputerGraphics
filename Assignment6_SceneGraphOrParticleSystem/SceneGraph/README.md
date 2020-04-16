@@ -4,8 +4,11 @@
 
 *TODO*: Please edit the following information in your assignment
 
-* Name and partners name(At most 1 partner for this Assignment): 
+* Name and partners name(At most 1 partner for this Assignment):
+Ray Namar
+Andrew Alcala (Partner)
 * How many hours did it take you to complete this Assignment? 
+6 hours
 * Did you collaborate or share ideas with any other students/TAs/Professors? 
 * Did you use any external resources? 
   * (tbd if any)
@@ -102,7 +105,7 @@ the final position of an object in world space? Note: There is a handy
 [tutorial](./media/SceneGraphs.pdf) in the repository including more
 information on scenegraphs which may help you answer.
   
-**Answer here**: Its better to store the local and world transforms because if we didn't we'd have to traverse the tree whenever we wanted the world transform of a node. If we wanted world transform of a node in the tree, we'd have to do multiple multiplications on the way down the tree, and that can get messy in bigger trees. It's easier to just do one multiplcaiton.
+**Answer here**: By storing both the local and world transforms, we don't have to traverse the tree every time we need the world matrix of a node. That would get out of hand with very deep graphs. Instead, we can calculate world matrices as we descend down from the root node in one go.
   
 ## How to run your program
 
